@@ -1,0 +1,2 @@
+
+<p>An existing project that attempts to solve this issue is called <a href="https://bicycleparking.org/introduction">The Bicycle Parking Project</a>. It allows users to upload locations and photos of bike racks to the app.
