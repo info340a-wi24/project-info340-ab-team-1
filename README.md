@@ -5,3 +5,5 @@ This repository contains code for an interactive information web app, created fo
 Shawn Leonard
 
 Alexandre Labbe
+
+Carson Klein
