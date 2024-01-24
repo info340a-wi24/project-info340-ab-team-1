@@ -1,2 +1,5 @@
 
-<p>An existing project that attempts to solve this issue is called <a href="https://bicycleparking.org/introduction">The Bicycle Parking Project</a>. It allows users to upload locations and photos of bike racks to the app.
+<p>An existing project that attempts to solve this issue is called <a href="https://bicycleparking.org/introduction">The Bicycle Parking Project</a>. 
+It allows users to upload locations and photos of bike racks to the app. This will serve as an inspiration for our project, but we plan to make some meaningful changes to the concept.
+First, we will primarily be focusing on the UW campus/Seattle area for our project. Additionally,
+</p>
