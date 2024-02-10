@@ -1,0 +1,43 @@
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #4285f4;
+    padding: 20px;
+    text-align: center;
+}
+
+.names {
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.problem-domain {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.app-description {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.references {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.references a {
+    color: #4285f4;
+    text-decoration: none;
+}
+
+.references a:hover {
+    text-decoration: underline;
+}
