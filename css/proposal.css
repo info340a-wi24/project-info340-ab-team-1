@@ -17,13 +17,7 @@ header {
     text-align: center;
 }
 
-.problem-domain {
-    padding: 20px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
-.app-description {
+.problem-domain, .app-description {
     padding: 20px;
     border: 1px solid #ccc;
     margin-bottom: 20px;

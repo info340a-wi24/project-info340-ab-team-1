@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rack Locator - Bike Locator</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <div class="navbar">
+        <div class="logo">Bike Locator</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Filter</button>
+                <div class="dropdown-content">
+                    <!-- Filter options here -->
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                    <a href="#">Option 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="button">&#128269;</button>
+        </div>
+        <div class="user-account">
+            <button class="account-btn">Account</button>
+        </div>
+        <div class="menu-icon">&#9776;</div>
+    </div>
+</nav>
+
+<!-- Main Content - Bike Rack Locator -->
+<div class="content">
+    <h1>Bike Rack Locator</h1>
+    <p>Find the nearest bike racks and contribute by adding new locations!</p>
+
+    <!-- Interactive Map Placeholder -->
+    <div class="map-placeholder">
+        <!-- Replace the 'src' attribute with the embed code from your chosen mapping service -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224855.34853752987!2d-74.0161621711343!3d40.70458240010137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a139c9c5e9b%3A0xd079d98e2b3d85f!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1645487938258!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Form for Adding New Location -->
+    <div class="add-location-form">
+        <h2>Add New Bike Rack Location</h2>
+        <form action="#" method="post" id="newLocationForm">
+            <label for="locationName">Location Name:</label>
+            <input type="text" id="locationName" name="locationName" required>
+
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" name="latitude" required>
+
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" name="longitude" required>
+
+            <button type="submit">Add Location</button>
+        </form>
+    </div>
+</div>
+
+<!-- About Us Section -->
+<div class="content">
+    <h1>About Us</h1>
+    <p>Welcome to Bike Locator, your go-to platform for finding bike racks around the city.</p>
+
+    <h2>Our Mission</h2>
+    <p>Our mission is to make bike commuting easier by providing a comprehensive and up-to-date map of bike rack locations.</p>
+
+    <h2>Why Choose Bike Locator?</h2>
+    <ul>
+        <li>Find the nearest bike racks with ease.</li>
+        <li>Contribute to the community by adding new bike rack locations.</li>
+        <li>Filter and search based on rack capacity and bike location.</li>
+    </ul>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions or suggestions, feel free to reach out to us at <a href="mailto:info@bikelocator.com">info@bikelocator.com</a>.</p>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Bike Locator. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
