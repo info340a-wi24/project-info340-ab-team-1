@@ -134,6 +134,12 @@ nav {
   text-align: center;
 }
 
+#map {
+  height: 400px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 /* Bike Rack Location Adder Form Styles */
 .add-location-form {
   margin-top: 20px;
