@@ -20,6 +20,7 @@ nav {
 .logo {
   font-size: 1.8em;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -31,6 +32,7 @@ nav {
   text-decoration: none;
   margin: 0 15px;
   transition: color 0.3s ease-in-out;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -103,8 +105,9 @@ nav {
 
 /* Search Bar Styles */
 .search-bar {
-  display: none;
+  display: flex;
   align-items: center;
+  padding: 1em;
 }
 
 .search-bar input {
@@ -131,6 +134,10 @@ nav {
 
 .content {
   padding: 20px;
+  text-align: center;
+}
+
+.content ul {
   text-align: center;
 }
 
@@ -190,6 +197,7 @@ nav {
 .content p,
 .content ul {
   font-size: 1em;
+  list-style-position: inside;
 }
 
 footer {
@@ -201,10 +209,39 @@ footer {
   width: 100%;
 }
 
+/* media query for small screens, mnobile devices */
+@media (max-width: 598px) {
+  .logo {
+    display: none;
+  }
 
+  .nav-links a {
+    display: none;
+  }
+  
+  .dropdown button {
+    padding: 0.5em;
+  }
 
-@media (min-width: 768px) {
-  div.search-bar {
-      display: flex;
+  .user-account button{
+    display: none;
+  }
+
+  nav {
+    background-color: #593f8d;
+  }
+
+  .dropbtn {
+    background-color: #593f8d;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .search-bar button {
+    background-color: #593f8d;
+  }
+
+  footer {
+    background-color: #593f8d;
   }
 }
