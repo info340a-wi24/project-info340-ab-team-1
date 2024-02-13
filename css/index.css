@@ -103,7 +103,7 @@ nav {
 
 /* Search Bar Styles */
 .search-bar {
-  display: flex;
+  display: none;
   align-items: center;
 }
 
@@ -199,4 +199,12 @@ footer {
   padding: 10px;
   /* Remove 'position: fixed;' */
   width: 100%;
+}
+
+
+
+@media (min-width: 768px) {
+  div.search-bar {
+      display: flex;
+  }
 }
