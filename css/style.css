@@ -41,3 +41,9 @@ header {
 .references a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    div.search-bar {
+        display: none;
+    }
+}
