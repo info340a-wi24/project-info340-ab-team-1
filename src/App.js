@@ -1,35 +1,22 @@
 import React from "react";
+import NavBar from "./components/Nav";
+import { Route, Routes } from 'react-router-dom'
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
 
 export function App() {
   return (
-    <div>
-      <body>
-        <nav>
-			<div class="navbar">
-				<div class="logo">Bike Locator</div>
-				<div class="nav-links">
-					<a href="index.html">Home</a>
-					<a href="about-us.html">About Us</a>
-					<div class="dropdown">
-						<button class="dropbtn">Filter</button>
-						<div class="dropdown-content">						
-							<a href="#">Option 1</a>
-							<a href="#">Option 2</a>
-							<a href="#">Option 3</a>
-						</div>
-					</div>
-				</div>
-				<div class="search-bar">
-					<input type="text" placeholder="Search..."/>
-					<button type="button">&#128269;</button>
-				</div>
-				<div class="user-account">
-					<button class="account-btn">Account</button>
-				</div>
-				<div class="menu-icon">&#9776;</div>
-			</div>
-        </nav>
-
+    <>
+		<NavBar />
+		<Routes>
+			<Route path="*" element={<Home />}/>
+			<Route path="/about" element={<About />}/>
+			<Route path="/register" element={<Register />}/>		
+		</Routes>
+		
+      {/*<body>
+		<NavBar />
         <main>
 			<div class="content">
 				<h1>Bike Rack Locator</h1>
@@ -38,22 +25,8 @@ export function App() {
 				<div class="map-placeholder" id="map">
 					<iframe title="Map Placeholder"></iframe>
 				</div>
+				<AddBikeForm />
 
-				<div class="add-location-form">
-					<h2>Add New Bike Rack Location</h2>
-					<form action="#" method="post" id="newLocationForm">
-						<label for="locationName">Location Name:</label>
-						<input type="text" id="locationName" name="locationName" required/>
-
-						<label for="latitude">Latitude:</label>
-						<input type="text" id="latitude" name="latitude" required/>
-
-						<label for="longitude">Longitude:</label>
-						<input type="text" id="longitude" name="longitude" required/>
-
-						<button type="submit">Add Location</button>
-					</form>
-				</div>
 			</div>
 
 			<div class="content">
@@ -81,8 +54,8 @@ export function App() {
 
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
         <script src="js/index.js"></script>
-      </body>
-    </div>
+  		</body> */}
+    </>
   );
 }
 
