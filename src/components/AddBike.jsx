@@ -1,22 +1,59 @@
 import React, { useState } from "react";
 
 export default function AddBikeForm() {
+    const [form, setForm] = useState({
+        locationName: "",
+        latitude: "",
+        longitude: "",
+    });
+
+    function updateForm(value) {
+        return setForm((prev) => {
+            return { ...prev, ...value}
+        });
+    }
+
+    async function onSubmit(e) {
+        e.preventDefault();
+        const newBikeRack = { ...form };
+        console.log(newBikeRack)
+    }
 
     return (
-        <div class="add-location-form">
+        <div className="add-location-form">
             <h2>Add New Bike Rack Location</h2>
-            <form action="#" method="post" id="newLocationForm">
-                <label for="locationName">Location Name:</label>
-                <input type="text" id="locationName" name="locationName" required/>
+            <form id="newLocationForm" onSubmit={onSubmit}>
+                <label htmlFor="locationName">Location Name:</label>
+                <input
+                    type="text"
+                    id="locationName"
+                    name="locationName"
+                    value={form.locationName}
+                    onChange={(e) => updateForm({ locationName: e.target.value })}
+                />
 
-                <label for="latitude">Latitude:</label>
-                <input type="text" id="latitude" name="latitude" required/>
+                <label htmlFor="latitude">Latitude:</label>
+                <input
+                    type="number"
+                    id="latitude"
+                    name="latitude"
+                    value={form.latitude}
+                    onChange={(e) => updateForm({ latitude: e.target.value })}
+                />
 
-                <label for="longitude">Longitude:</label>
-                <input type="text" id="longitude" name="longitude" required/>
+                <label htmlFor="longitude">Longitude:</label>
+                <input
+                    type="number"
+                    id="longitude"
+                    name="longitude"
+                    value={form.longitude}
+                    onChange={(e) => updateForm({ longitude: e.target.value })}
+                />
 
                 <button type="submit">Add Location</button>
             </form>
+
+
         </div>
     )
 }

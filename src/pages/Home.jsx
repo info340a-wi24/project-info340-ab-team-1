@@ -6,7 +6,7 @@ export default function Home(){
     return (
         <>
         <main>
-			<div class="content">
+			<div className="content">
 				<h1>Bike Rack Locator</h1>
 				<p>Find the nearest bike racks and contribute by adding new locations!</p>
 
@@ -15,7 +15,7 @@ export default function Home(){
 
 			</div>
 
-			<div class="content">
+			<div className="content">
 				<h1>About Bike Locator</h1>
 				<p>Welcome to Bike Locator, your go-to platform for finding bike racks around the city.</p>
 
