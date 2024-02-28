@@ -1,42 +1,9 @@
 import React from "react";
+import cardData from '../cards.json';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function About() {
-  const cardData = [
-    {
-      name: 'Alexandre Labbé',
-      major: 'Informatics',
-      graduationYear: '2025',
-      linkedin: 'https://www.linkedin.com/in/alexandrelabbe/',
-      github: 'https://github.com/alexandrelabbe',
-      imgSrc: 'assets/AL.jpg'
-    },
-    {
-      name: 'Shawn Leonard',
-      major: 'Geography: Data Science',
-      graduationYear: '2024',
-      linkedin: 'https://www.linkedin.com/in/shawn-leonard-004592217/',
-      github: 'https://github.com/lenny400',
-      imgSrc: 'assets/SL.jpg'
-    },
-    {
-      name: 'Jaiden York',
-      major: 'Informatics',
-      graduationYear: '2024',
-      linkedin: 'https://www.linkedin.com/in/jaiden-york-a01169234/',
-      github: 'https://github.com/jaidenyork',
-      imgSrc: 'assets/JY.jpg'
-    },
-    {
-      name: 'Carson Klein',
-      major: 'Geography: Data Science + Informatics Minor',
-      graduationYear: '2024',
-      linkedin: 'https://www.linkedin.com/in/carson-klein-325b1a13b/',
-      github: 'https://github.com/carsonfk',
-      imgSrc: 'assets/CK.jpg'
-    }
-  ];
 
 return (
     <div className="container">
