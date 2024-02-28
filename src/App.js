@@ -1,18 +1,21 @@
 import React from "react";
 import NavBar from "./components/Nav";
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom';
 import About from "./pages/About";
-import Home from "./pages/Home";
-import Register from "./pages/Register";
+// import Home from "./pages/Home";
+// import Register from "./pages/Register";
 
 export function App() {
   return (
     <>
 		<NavBar />
-		<Routes>
+		{/* <Routes>
 			<Route path="*" element={<Home />}/>
 			<Route path="/about" element={<About />}/>
 			<Route path="/register" element={<Register />}/>		
+		</Routes> */}
+		<Routes>
+			<Route path="/about" element={<About />} />
 		</Routes>
 		
       {/*<body>
