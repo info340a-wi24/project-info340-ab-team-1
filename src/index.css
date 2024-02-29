@@ -1,247 +1,247 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  nav {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #4CAF50;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropbtn:hover {
+  background-color: #4CAF50;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.dropdown-content label,
+.dropdown-content select {
+  display: block;
+  margin: 10px 0;
+}
+
+.dropdown-content select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.user-account {
+  margin-left: auto;
+}
+
+.account-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.account-btn:hover {
+  background-color: #45a049;
+}
+
+.menu-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Search Bar Styles */
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+.search-bar input {
+  width: 200px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-bar button:hover {
+  background-color: #4CAF50;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+.content ul {
+  text-align: center;
+}
+
+#map {
+  height: 400px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* Bike Rack Location Adder Form Styles */
+.add-location-form {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-location-form h2 {
+  color: #333;
+}
+
+.add-location-form label {
+  display: block;
+  margin: 10px 0;
+}
+
+.add-location-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-location-form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-location-form button:hover {
+  background-color: #45a049;
+}
+
+/* Adjust font size for About Us section */
+.content h1,
+.content h2 {
+  font-size: 1.5em;
+}
+
+.content p,
+.content ul {
+  font-size: 1em;
+  list-style-position: inside;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  /* Remove 'position: fixed;' */
+  width: 100%;
+}
+
+/* media query for small screens, mnobile devices */
+@media (max-width: 598px) {
   .logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    white-space: nowrap;
-  }
-  
-  .nav-links {
-    display: flex;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s ease-in-out;
-    white-space: nowrap;
-  }
-  
-  .nav-links a:hover {
-    color: #4CAF50;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropbtn {
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .dropbtn:hover {
-    background-color: #4CAF50;
-  }
-  
-  .dropdown-content {
     display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    padding: 15px;
-    border-radius: 8px;
   }
-  
-  .dropdown-content label,
-  .dropdown-content select {
-    display: block;
-    margin: 10px 0;
+
+  .nav-links a {
+    display: none;
   }
-  
-  .dropdown-content select {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
+  .dropdown button {
+    padding: 0.5em;
   }
-  
-  .user-account {
-    margin-left: auto;
+
+  .user-account button{
+    display: none;
   }
-  
-  .account-btn {
-    background-color: #4CAF50;
+
+  nav {
+    background-color: #593f8d;
+  }
+
+  .dropbtn {
+    background-color: #593f8d;
     color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
     transition: background-color 0.3s ease-in-out;
   }
-  
-  .account-btn:hover {
-    background-color: #45a049;
-  }
-  
-  .menu-icon {
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-  
-  /* Search Bar Styles */
-  .search-bar {
-    display: flex;
-    align-items: center;
-    padding: 1em;
-  }
-  
-  .search-bar input {
-    width: 200px;
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  
+
   .search-bar button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease-in-out;
+    background-color: #593f8d;
   }
-  
-  .search-bar button:hover {
-    background-color: #4CAF50;
-  }
-  
-  .content {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .content ul {
-    text-align: center;
-  }
-  
-  #map {
-    height: 400px;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-  
-  /* Bike Rack Location Adder Form Styles */
-  .add-location-form {
-    margin-top: 20px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .add-location-form h2 {
-    color: #333;
-  }
-  
-  .add-location-form label {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  .add-location-form input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .add-location-form button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .add-location-form button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Adjust font size for About Us section */
-  .content h1,
-  .content h2 {
-    font-size: 1.5em;
-  }
-  
-  .content p,
-  .content ul {
-    font-size: 1em;
-    list-style-position: inside;
-  }
-  
+
   footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    /* Remove 'position: fixed;' */
-    width: 100%;
+    background-color: #593f8d;
   }
-  
-  /* media query for small screens, mnobile devices */
-  @media (max-width: 598px) {
-    .logo {
-      display: none;
-    }
-  
-    .nav-links a {
-      display: none;
-    }
-    
-    .dropdown button {
-      padding: 0.5em;
-    }
-  
-    .user-account button{
-      display: none;
-    }
-  
-    nav {
-      background-color: #593f8d;
-    }
-  
-    .dropbtn {
-      background-color: #593f8d;
-      color: white;
-      transition: background-color 0.3s ease-in-out;
-    }
-  
-    .search-bar button {
-      background-color: #593f8d;
-    }
-  
-    footer {
-      background-color: #593f8d;
-    }
-  }
+}

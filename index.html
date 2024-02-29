@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Bike Rack Locator - Bike Locator</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="src/index.css">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
 </head>
 <body>
@@ -84,13 +84,42 @@
             <h2>Contact Us</h2>
             <p>If you have any questions or suggestions, feel free to reach out to us at <a href="mailto:info@bikelocator.com">info@bikelocator.com</a>.</p>
         </div>
+
+        <!-- Login Form Popup -->
+        <div id="loginFormPopup" class="form-popup">
+            <form action="#" class="form-container">
+                <center><h2>Login</h2></center>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" id="closeLoginForm">Close</button>
+                <center> <p>If you have not account <a href="#" id="openSignupFromLogin">click here</a></p></center>
+            </form>
+        </div>
+
+        <!-- Signup Form Popup -->
+        <div id="signupFormPopup" class="form-popup">
+            <form action="#" class="form-container">
+                <center><h2>Signup</h2></center>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <button type="submit" class="btn">Signup</button>
+                <button type="button" class="btn cancel" id="closeSignupForm">Close</button>
+                <center> <p>If you already registered! <a href="#" id="openLoginFromSignup">click here</a></p></center>
+            </form>
+        </div>
     </main>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Bike Locator. All rights reserved.</p>
     </footer>
 
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
-    <script src="js/index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
