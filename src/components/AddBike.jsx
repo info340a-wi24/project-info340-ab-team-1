@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { getDatabase, ref, set as firebaseSet, push } from 'firebase/database'
+import FilterForm from './FilterForm'
 
 export default function AddBikeForm() {
     const [form, setForm] = useState({
         locationName: "",
         latitude: "",
         longitude: "",
+        type: ""
     });
 
     function updateForm(value) {
@@ -15,8 +18,10 @@ export default function AddBikeForm() {
 
     async function onSubmit(e) {
         e.preventDefault();
+        const db = getDatabase();
+        const bikerackRef = ref(db, "racks")
         const newBikeRack = { ...form };
-        console.log(newBikeRack)
+        const newbikeRef = push(bikerackRef, newBikeRack);
     }
 
     return (
@@ -49,9 +54,20 @@ export default function AddBikeForm() {
                     value={form.longitude}
                     onChange={(e) => updateForm({ longitude: e.target.value })}
                 />
+                <div className="bike-rack-type-buttons" style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                    <label htmlFor="bike-rack-type">Bike rack type: </label>
+                    <label htmlFor="covered">Covered: </label>
+                    <input style={{width: '20px', height: '20px'}} type="radio" id="covered" name="bike-rack-type" value="covered" onChange={(e) => updateForm({ type: "covered" })}/>
+                    <label htmlFor="uncovered">Uncovered: </label>
+                    <input style={{width: '20px', height: '20px'}} type="radio" id="uncovered" name="bike-rack-type" value="uncovered" onChange={(e) => updateForm({ type: "uncovered" })}/>
+                    <label htmlFor="locked">Locked: </label>
+                    <input style={{width: '20px', height: '20px'}} type="radio" id="locked" name="bike-rack-type" value="locked" onChange={(e) => updateForm({ type: "locked" })}/>
+                </div>
 
                 <button type="submit">Add Location</button>
             </form>
+            
+
 
 
         </div>
