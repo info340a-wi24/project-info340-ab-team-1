@@ -147,6 +147,15 @@ nav {
   margin-right: 50px;
 }
 
+.mapboxgl-popup {
+  max-width: 400px;
+  font:
+      12px/20px 'Helvetica Neue',
+      Arial,
+      Helvetica,
+      sans-serif;
+}
+
 /* Bike Rack Location Adder Form Styles */
 .add-location-form {
   margin-top: 20px;

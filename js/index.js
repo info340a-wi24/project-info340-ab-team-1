@@ -31,6 +31,30 @@ async function geojsonFetch() {
             }
         });
     });
+
+    // Create a popup, but don't add it to the map yet.
+    const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+
+    map.on('mouseenter', 'locations_layer', (point) => {
+        map.getCanvas().style.cursor = 'pointer';
+
+        const coordinates = point.features[0].geometry.coordinates.slice();
+        const locked = point.features[0].properties.locked;
+
+        while (Math.abs(point.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += point.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        popup.setLngLat(coordinates).setHTML("Locked: " + locked).addTo(map);
+    });
+
+    map.on('mouseleave', 'locations_layer', () => {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+    });
 }
 
 geojsonFetch();
