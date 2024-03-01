@@ -54,19 +54,19 @@ export default function AddBikeForm() {
                     value={form.longitude}
                     onChange={(e) => updateForm({ longitude: e.target.value })}
                 />
-                <div className="bike-rack-type-buttons" style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                <div className="bike-rack-type-buttons" style={{border: "7px solid green", borderRadius: "8px", padding: "10px", display: "flex", alignItems: "center", justifyContent: "center"}}>
                     <label htmlFor="bike-rack-type">Bike rack type: </label>
                     <label htmlFor="covered">Covered: </label>
-                    <input style={{width: '20px', height: '20px'}} type="radio" id="covered" name="bike-rack-type" value="covered" onChange={(e) => updateForm({ type: "covered" })}/>
+                    <input style={{width: '20px', height: '20px', marginRight: '10px' }} type="radio" id="covered" name="bike-rack-type" value="covered" onChange={(e) => updateForm({ type: "covered" })}/>
                     <label htmlFor="uncovered">Uncovered: </label>
-                    <input style={{width: '20px', height: '20px'}} type="radio" id="uncovered" name="bike-rack-type" value="uncovered" onChange={(e) => updateForm({ type: "uncovered" })}/>
+                    <input style={{width: '20px', height: '20px', marginRight: '10px' }} type="radio" id="uncovered" name="bike-rack-type" value="uncovered" onChange={(e) => updateForm({ type: "uncovered" })}/>
                     <label htmlFor="locked">Locked: </label>
-                    <input style={{width: '20px', height: '20px'}} type="radio" id="locked" name="bike-rack-type" value="locked" onChange={(e) => updateForm({ type: "locked" })}/>
+                    <input style={{width: '20px', height: '20px', marginRight: '10px' }} type="radio" id="locked" name="bike-rack-type" value="locked" onChange={(e) => updateForm({ type: "locked" })}/>
                 </div>
 
                 <button type="submit">Add Location</button>
             </form>
-            
+
 
 
 
