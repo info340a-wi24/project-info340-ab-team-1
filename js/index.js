@@ -5,9 +5,36 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    zoom: 13.6,
-    center: [-122.307, 47.655]
+    zoom: 14.3,
+    center: [-122.308, 47.655]
 });
+
+async function geojsonFetch() {
+    let response = await fetch('src/data/locations.geojson');
+    let locations = await response.json();
+
+    map.on('load', function loadingData() {
+        map.addSource('locations', {
+            type: 'geojson',
+            data: locations
+        });
+
+        map.addLayer({
+            'id': 'locations_layer',
+            'type': 'circle',
+            'source': 'locations',
+            'paint': {
+                'circle-radius': 8,
+                'circle-stroke-width': 2,
+                'circle-color': '#67d339',
+                'circle-stroke-color': 'white'
+            }
+        });
+    });
+}
+
+geojsonFetch();
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var loginFormPopup = document.getElementById('loginFormPopup');
