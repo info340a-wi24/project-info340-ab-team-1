@@ -2,7 +2,7 @@ import React from "react";
 import AddBikeForm from "../components/AddBike";
 import Map from "../components/Map";
 
-export default function Home(){
+export default function Home(props){
     return (
         <>
         <main>
@@ -10,7 +10,7 @@ export default function Home(){
 				<h1>Bike Rack Locator</h1>
 				<p>Find the nearest bike racks and contribute by adding new locations!</p>
 
-				<Map/>
+				<Map locations={props.locations}/>
 				<AddBikeForm />
 
 			</div>

@@ -5,13 +5,13 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 
-export function App() {
+export function App(props) {
   return (
     <>
 		<NavBar />
 		<Routes>
 			<Route path="/about" element={<About />} />
-			<Route path="*" element={<Home />} />
+			<Route path="*" element={<Home locations={props.locations}/>} />
 			<Route path="/register" element={<Register />} />
 		</Routes>
     </>

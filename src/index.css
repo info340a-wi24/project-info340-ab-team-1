@@ -150,6 +150,15 @@ nav {
   margin-right: 50px;
 }
 
+.temp {
+  max-width: 400px;
+  font:
+      12px/20px 'Helvetica Neue',
+      Arial,
+      Helvetica,
+      sans-serif;
+}
+
 .add-location-form {
   margin-top: 20px;
   background-color: #fff;
