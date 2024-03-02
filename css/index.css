@@ -193,6 +193,7 @@ nav {
   transition: background-color 0.3s ease-in-out;
 }
 
+
 .add-location-form button:hover {
   background-color: #45a049;
 }
@@ -217,6 +218,7 @@ footer {
   /* Remove 'position: fixed;' */
   width: 100%;
 }
+
 
 /* media query for small screens, mnobile devices */
 @media (max-width: 598px) {
