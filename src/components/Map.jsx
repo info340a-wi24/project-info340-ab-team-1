@@ -3,16 +3,31 @@ import mapboxgl from 'mapbox-gl'
 
 
 export default function Map(props) {
-    let locations = props.locations;
+    //let locations = props.locations;
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [lng, setLng] = useState(-122.308);
     const [lat, setLat] = useState(47.655);
     const [zoom, setZoom] = useState(14.3);
+    const [bikeLocations, setBikeLocations] = useState([]);
     const popup = new mapboxgl.Popup({
             closeButton: false,
             closeOnClick: false
     });
+
+    useEffect(() => {
+        if(props.locations){
+            setBikeLocations([])
+            props.locations.forEach((row) => {
+                const newLoc = `{"type":"Feature","properties":{"name":"${row.val().locationName}","type":"${row.val().type}"},"geometry":{"type":"Point","coordinates":[${row.val().latitude},${row.val().longitude}]}}`
+                    setBikeLocations((prev) => [...prev, newLoc])
+                })
+        }
+    }, [props])
+
+
+
+
     mapboxgl.accessToken='pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw';
     useEffect(() => {
         if (map.current) return; // initialize map only once
@@ -26,7 +41,10 @@ export default function Map(props) {
         map.current.on('load', () => {
             map.current.addSource('locations', {
                 type: 'geojson',
-                data: locations
+                data: {
+                    "type": "FeatureCollection",
+                    "features": JSON.parse(`[${bikeLocations}]`)
+                }
             });
 
             map.current.addLayer({
@@ -59,13 +77,26 @@ export default function Map(props) {
             map.current.getCanvas().style.cursor = '';
             popup.remove();
         });
+    }, []);
 
-        console.log(locations)
-    });
+    useEffect(() => {
+        if(map.current.getSource('locations')){           
+            const source = map.current.getSource('locations')
+            source.setData({
+                "type": "FeatureCollection",
+                "features": JSON.parse(`[${bikeLocations}]`)
+                })
+        }
+
+    }, [bikeLocations])
+
+    const position = [51.505, -0.09]
 
     return (
+        <>
         <div style={{paddingBottom:"30px"}}>
             <div ref={mapContainer} style={{height:"400px"}}/>
         </div>
+        </>
     )
 }

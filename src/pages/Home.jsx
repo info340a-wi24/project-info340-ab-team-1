@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import AddBikeForm from "../components/AddBike";
 import Map from "../components/Map";
+import {getDatabase, ref, onValue } from 'firebase/database'
 
 export default function Home(props){
+	const [data, setData] = useState([])
+	useEffect(() =>{
+		const db = getDatabase();
+		const racks = ref(db, "racks")
+		onValue(racks, (snapshot) => {
+			setData(snapshot)
+		})
+	}, [])
+
     return (
         <>
         <main>
@@ -10,7 +20,7 @@ export default function Home(props){
 				<h1>Bike Rack Locator</h1>
 				<p>Find the nearest bike racks and contribute by adding new locations!</p>
 
-				<Map locations={props.locations}/>
+				<Map locations={data}/>
 				<AddBikeForm />
 
 			</div>

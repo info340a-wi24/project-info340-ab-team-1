@@ -21,11 +21,7 @@ export default function FilterForm() {
                 <label for="off-campus">Off campus</label>
             </div>
 
-            <div>
-                <label for="has-charger">Access to an outlet:</label>
-                <input type="radio" id="has-outlet" name="has-charger" value="has-outlet"/>
-                <label for="has-outlet">Has outlet</label>
-            </div>
+
 
             <div>
             <input type="submit" value="Submit"/>
