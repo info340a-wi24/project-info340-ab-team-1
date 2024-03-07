@@ -1,10 +1,20 @@
 import React, {useState, useEffect} from "react";
 import AddBikeForm from "../components/AddBike";
 import Map from "../components/Map";
+import FilterForm from "../components/FilterForm";
 import {getDatabase, ref, onValue } from 'firebase/database'
 
 export default function Home(props){
 	const [data, setData] = useState([])
+	const [filter, setFilter] = useState()
+
+	useEffect(() =>{
+		console.log(filter)
+	}, [filter])
+
+	const handleFilterSubmit = (selectedFilter) => {
+		setFilter(selectedFilter);
+	};
 	useEffect(() =>{
 		const db = getDatabase();
 		const racks = ref(db, "racks")
@@ -19,7 +29,7 @@ export default function Home(props){
 			<div className="content">
 				<h1>Bike Rack Locator</h1>
 				<p>Find the nearest bike racks and contribute by adding new locations!</p>
-
+				<FilterForm onSubmit={handleFilterSubmit} />
 				<Map locations={data}/>
 				<AddBikeForm />
 

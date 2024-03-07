@@ -1,30 +1,27 @@
+
 import React from "react";
 
-export default function FilterForm() {
+export default function FilterForm({onSubmit}) {
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const selectedFilter = event.target.elements['bike-rack-type'].value;
+        onSubmit(selectedFilter);
+    };
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
-            <label for="bike-rack-type">Bike rack type:</label>
-            <input type="radio" id="covered" name="bike-rack-type" value="covered"/>
-            <label for="covered">Covered</label>
-            <input type="radio" id="uncovered" name="bike-rack-type" value="uncovered"/>
-            <label for="uncovered">Uncovered</label>
-            <input type="radio" id="locked" name="bike-rack-type" value="locked"/>
-            <label for="locked">Locked</label>
-            </div>
-
-            <div>
-                <label for="bike-location">Bike location:</label>
-                <input type="radio" id="on-campus" name="bike-location" value="on-campus"/>
-                <label for="on-campus">On campus</label>
-                <input type="radio" id="off-campus" name="bike-location" value="off-campus"/>
-                <label for="off-campus">Off campus</label>
-            </div>
-
-
-
-            <div>
-            <input type="submit" value="Submit"/>
+                <label htmlFor="bike-rack-type">Bike rack type:</label>
+                <input type="radio" id="all" name="bike-rack-type" value=""/>
+                <label htmlFor="all">No filter</label>
+                <input type="radio" id="covered" name="bike-rack-type" value="covered"/>
+                <label htmlFor="covered">Covered</label>
+                <input type="radio" id="uncovered" name="bike-rack-type" value="uncovered"/>
+                <label htmlFor="uncovered">Uncovered</label>
+                <input type="radio" id="locked" name="bike-rack-type" value="locked"/>
+                <label htmlFor="locked">Locked</label>
+                <input type="submit" value="Submit"/>
             </div>
       </form>
     )
