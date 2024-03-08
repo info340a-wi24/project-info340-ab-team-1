@@ -6,28 +6,27 @@ import {getDatabase, ref, onValue, get, orderByChild, equalTo, query } from 'fir
 
 export default function Home(props){
 	const [data, setData] = useState()
-	const [filter, setFilter] = useState('')
+	const [filter, setFilter] = useState('null') //initial value 'null' is because of the buggy initial load. if the initial state of filter was: '', then updating it with the form would not cause a rerender. so it needs an initial value other than ''
 	const [reset, setReset] = useState(0);
 	
 	useEffect(() =>{
 		async function fetchFilter() {
 			const db = getDatabase();
 			const racksRef = ref(db, "racks");
-			const orderByType = query(racksRef, orderByChild('type'), equalTo(filter))
+			const orderByType = query(racksRef, orderByChild('type'), equalTo(filter)) // makes a query to the database to only return values with type=filter
 			const querySnapshot = await get(orderByType);
 			setData(querySnapshot)
 		}
-		if (filter === ''){
+		if (filter === ''){ //filter==='' is for when no filter, so that it queries all types. 
 			setReset(reset + 1)
 		} else { fetchFilter() } 
-		
-	}, [filter])
+	}, [filter]) //anytime filter is updated
 
-	const handleFilterSubmit = (selectedFilter) => {
+	const handleFilterSubmit = (selectedFilter) => { //this has to do with updating filter value when the filter form is submitted
 		setFilter(selectedFilter);
 	};
 	
-	useEffect(()=>{
+	useEffect(()=>{ //this is getting all of the bikeracks.
 		async function noFilterLoad() {
 			const db = getDatabase();
 			const racksRef = ref(db, "racks");

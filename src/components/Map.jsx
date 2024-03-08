@@ -16,17 +16,17 @@ export default function Map(props) {
             closeOnClick: false
     });
 
-    useEffect(() => {
+    useEffect(() => { // this is really aids so bear with me
         if(props.locations){
-            let newLocations = []
-            props.locations.forEach((row) => {
+            let newLocations = [] // create an empty array to add all the new geoJSON stuff
+            props.locations.forEach((row) => { // for every bike rack, create a geoJSON format object and add it to the newLocations arr
                 const newLoc = `{"type":"Feature","properties":{"name":"${row.val().locationName}","type":"${row.val().type}"},"geometry":{"type":"Point","coordinates":[${row.val().latitude},${row.val().longitude}]}}`
                 newLocations.push(newLoc)
             })
-            setBikeLocations(newLocations)
-            console.log(bikeLocations)
+            setBikeLocations(newLocations) //setState of bikeracks to this string array of to-be-jsonified bike racks
+            console.log(bikeLocations) // print for testing
         }
-    }, [props.locations])
+    }, [props.locations]) //fire this whenevery the bike racks put into the map change
 
 
 
@@ -83,7 +83,7 @@ export default function Map(props) {
     }, []);
 
     useEffect(() => {
-        if(map.current.getSource('locations')){           
+        if(map.current.getSource('locations')){   //update the source of the bike racks on the map        
             const source = map.current.getSource('locations')
             source.setData({
                 "type": "FeatureCollection",
@@ -91,7 +91,7 @@ export default function Map(props) {
                 })
         }
 
-    }, [bikeLocations])
+    }, [bikeLocations]) // everytime the bikeLocations state is changes
 
     const position = [51.505, -0.09]
 
