@@ -2,26 +2,48 @@ import React, {useState, useEffect} from "react";
 import AddBikeForm from "../components/AddBike";
 import Map from "../components/Map";
 import FilterForm from "../components/FilterForm";
-import {getDatabase, ref, onValue } from 'firebase/database'
+import {getDatabase, ref, onValue, get, orderByChild, equalTo, query } from 'firebase/database'
 
 export default function Home(props){
-	const [data, setData] = useState([])
-	const [filter, setFilter] = useState()
-
+	const [data, setData] = useState()
+	const [filter, setFilter] = useState('')
+	const [reset, setReset] = useState(0);
+	
 	useEffect(() =>{
-		console.log(filter)
+		async function fetchFilter() {
+			const db = getDatabase();
+			const racksRef = ref(db, "racks");
+			const orderByType = query(racksRef, orderByChild('type'), equalTo(filter))
+			const querySnapshot = await get(orderByType);
+			setData(querySnapshot)
+		}
+		if (filter === ''){
+			setReset(reset + 1)
+		} else { fetchFilter() } 
+		
 	}, [filter])
 
 	const handleFilterSubmit = (selectedFilter) => {
 		setFilter(selectedFilter);
 	};
+	
+	useEffect(()=>{
+		async function noFilterLoad() {
+			const db = getDatabase();
+			const racksRef = ref(db, "racks");
+			const first = await get(racksRef);
+			setData(first)
+		}
+		noFilterLoad()
+	}, [, reset])
+	/*
 	useEffect(() =>{
 		const db = getDatabase();
 		const racks = ref(db, "racks")
 		onValue(racks, (snapshot) => {
 			setData(snapshot)
 		})
-	}, [])
+	}, [reset])*/
 
     return (
         <>

@@ -4,6 +4,7 @@ import mapboxgl from 'mapbox-gl'
 
 export default function Map(props) {
     //let locations = props.locations;
+    
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [lng, setLng] = useState(-122.308);
@@ -17,13 +18,15 @@ export default function Map(props) {
 
     useEffect(() => {
         if(props.locations){
-            setBikeLocations([])
+            let newLocations = []
             props.locations.forEach((row) => {
                 const newLoc = `{"type":"Feature","properties":{"name":"${row.val().locationName}","type":"${row.val().type}"},"geometry":{"type":"Point","coordinates":[${row.val().latitude},${row.val().longitude}]}}`
-                    setBikeLocations((prev) => [...prev, newLoc])
-                })
+                newLocations.push(newLoc)
+            })
+            setBikeLocations(newLocations)
+            console.log(bikeLocations)
         }
-    }, [props])
+    }, [props.locations])
 
 
 
