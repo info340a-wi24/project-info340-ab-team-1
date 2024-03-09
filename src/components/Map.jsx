@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect} from "react";
 import mapboxgl from 'mapbox-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 
 export default function Map(props) {
@@ -12,7 +13,6 @@ export default function Map(props) {
     const [zoom, setZoom] = useState(14.3);
     const [bikeLocations, setBikeLocations] = useState([]);
     const popup = new mapboxgl.Popup({
-            offset: [0, -480],
             closeButton: false,
             closeOnClick: false
     });
