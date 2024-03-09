@@ -68,7 +68,8 @@ export default function Map(props) {
             map.current.getCanvas().style.cursor = 'pointer';
 
             const coordinates = point.features[0].geometry.coordinates.slice();
-            const type = point.features[0].properties.type;
+            let typeLC = point.features[0].properties.type;
+            const type = typeLC.charAt(0).toUpperCase() + typeLC.slice(1)
 
             while (Math.abs(point.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += point.lngLat.lng > coordinates[0] ? 360 : -360;
