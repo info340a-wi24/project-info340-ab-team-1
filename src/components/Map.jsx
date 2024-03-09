@@ -12,6 +12,7 @@ export default function Map(props) {
     const [zoom, setZoom] = useState(14.3);
     const [bikeLocations, setBikeLocations] = useState([]);
     const popup = new mapboxgl.Popup({
+            offset: [0, -480],
             closeButton: false,
             closeOnClick: false
     });
@@ -67,13 +68,13 @@ export default function Map(props) {
             map.current.getCanvas().style.cursor = 'pointer';
 
             const coordinates = point.features[0].geometry.coordinates.slice();
-            const locked = point.features[0].properties.locked;
+            const type = point.features[0].properties.type;
 
             while (Math.abs(point.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += point.lngLat.lng > coordinates[0] ? 360 : -360;
             }
 
-            popup.setLngLat(coordinates).setHTML("Locked: " + locked).addTo(map.current);
+            popup.setLngLat(coordinates).setHTML("Type: " + type).addTo(map.current);
         });
 
         map.current.on('mouseleave', 'locations_layer', () => {
