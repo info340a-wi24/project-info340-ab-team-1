@@ -47,7 +47,10 @@ export default function Home(props){
 
     return (
         <>
-		<Hero />
+		<header>
+			<Hero />
+		</header>
+		
         <main>
 			<div className="content">
 				<h1>Bike Rack Locator</h1>
