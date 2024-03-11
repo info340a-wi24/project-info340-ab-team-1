@@ -3,6 +3,7 @@ import AddBikeForm from "../components/AddBike";
 import Map from "../components/Map";
 import FilterForm from "../components/FilterForm";
 import {getDatabase, ref, onValue, get, orderByChild, equalTo, query } from 'firebase/database'
+import Hero from "../components/Hero";
 
 export default function Home(props){
 	const [data, setData] = useState()
@@ -46,6 +47,7 @@ export default function Home(props){
 
     return (
         <>
+		<Hero />
         <main>
 			<div className="content">
 				<h1>Bike Rack Locator</h1>
