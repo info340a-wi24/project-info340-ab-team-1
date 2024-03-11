@@ -11,17 +11,17 @@ export default function FilterForm({onSubmit}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="bike-rack-type">Bike rack type:</label>
-                <input type="radio" id="all" name="bike-rack-type" value=""/>
-                <label htmlFor="all">No filter</label>
-                <input type="radio" id="covered" name="bike-rack-type" value="covered"/>
+            <div className="bikeRackFilter">
+                <label htmlFor="bike-rack-type"><b>Bike rack type: </b></label>
                 <label htmlFor="covered">Covered</label>
-                <input type="radio" id="uncovered" name="bike-rack-type" value="uncovered"/>
+                <input type="radio" id="covered" name="bike-rack-type" value="covered"/>
                 <label htmlFor="uncovered">Uncovered</label>
-                <input type="radio" id="locked" name="bike-rack-type" value="locked"/>
+                <input type="radio" id="uncovered" name="bike-rack-type" value="uncovered"/>
                 <label htmlFor="locked">Locked</label>
-                <input type="submit" value="Submit"/>
+                <input type="radio" id="locked" name="bike-rack-type" value="locked"/>
+                <label htmlFor="all">No filter</label>
+                <input type="radio" id="all" name="bike-rack-type" value=""/>
+                <input type="submit" value="Filter"/>
             </div>
       </form>
     )

@@ -55,7 +55,7 @@ export default function AddBikeForm() {
                     onChange={(e) => updateForm({ longitude: e.target.value })}
                 />
                 <div className="bike-rack-type-buttons" style={{ border: "2px solid #4CAF50", borderRadius: "6px", padding: "10px", display: "flex", alignItems: "center", justifyContent: "center", background: "#f2f2f2" }}>
-                    <label htmlFor="bike-rack-type">Bike rack type: </label>
+                    <label htmlFor="bike-rack-type"><b>Bike rack type:</b></label>
                     <label htmlFor="covered">Covered: </label>
                     <input style={{width: '20px', height: '20px', marginRight: '10px' }} type="radio" id="covered" name="bike-rack-type" value="covered" onChange={(e) => updateForm({ type: "covered" })}/>
                     <label htmlFor="uncovered">Uncovered: </label>

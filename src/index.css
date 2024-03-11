@@ -328,3 +328,23 @@ footer {
   height: 3em;
   align-self: center;
 }
+
+/* Filter buttons styling */
+
+.bikeRackFilter {
+  background-color: #333;
+  color: white;
+}
+
+.bikeRackFilter label {
+  margin: 0.5em;
+}
+
+.bikeRackFilter input {
+  margin-right: 1em;
+}
+
+/* Add new bike rack form styling */
+.bike-rack-type-buttons label {
+  margin: 0.5em;
+}
