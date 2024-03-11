@@ -294,39 +294,61 @@ footer {
 
 .heroContainer {
   display: flex;
-  background-color: #333;
-  color: white;
+  background-color: beige;
+  color: #333;
   box-sizing: border-box;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  padding: 2em;
 }
 
 .heroImage {
-  width: 75%;
-  height: 75%;
-  object-fit: contain;
-  margin: 1em;
+  width: 50%;
+  max-width: 600px;
+  height: auto;
+  margin-right: 2em;
 }
 
 @media (max-width: 750px) {
   .heroImage {
     width: 60%;
-    height: 60%;
   }
 }
 
 .heroContent {
-  margin: 1em;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.heroDescription {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: #555;
 }
 
 .heroButton {
-  width: 7em;
-  height: 3em;
-  align-self: center;
+  width: 12em; /* Adjusted width */
+  height: 3.5em; /* Adjusted height */
+  background-color: #007bff; /* Blue button background */
+  color: #fff; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded button corners */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.heroButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Filter buttons styling */
