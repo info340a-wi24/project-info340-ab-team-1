@@ -18,10 +18,15 @@ export default function AddBikeForm() {
 
     async function onSubmit(e) {
         e.preventDefault();
-        const db = getDatabase();
-        const bikerackRef = ref(db, "racks")
-        const newBikeRack = { ...form };
-        const newbikeRef = push(bikerackRef, newBikeRack);
+        if (form.name != "" && form.latitude != "" && form.longitude != "") {
+            const db = getDatabase();
+            const bikerackRef = ref(db, "racks")
+            const newBikeRack = { ...form };
+            const newbikeRef = push(bikerackRef, newBikeRack);
+        } else {
+            //test error message
+            console.error("hello")
+        }
     }
 
     return (
@@ -40,6 +45,8 @@ export default function AddBikeForm() {
                 <label htmlFor="latitude">Latitude:</label>
                 <input
                     type="number"
+                    min="-90"
+                    max="90"
                     id="latitude"
                     name="latitude"
                     value={form.latitude}
@@ -49,6 +56,8 @@ export default function AddBikeForm() {
                 <label htmlFor="longitude">Longitude:</label>
                 <input
                     type="number"
+                    min="-180"
+                    max="180"
                     id="longitude"
                     name="longitude"
                     value={form.longitude}
