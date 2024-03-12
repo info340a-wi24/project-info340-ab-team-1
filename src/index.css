@@ -293,22 +293,23 @@ footer {
 /* Hero section styling */
 
 .heroContainer {
-  display: flex;
-  background-color: beige;
-  color: #333;
-  box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  padding: 2em;
+  background: linear-gradient(to bottom, beige, white);
+  color: black;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex; /* Add flex display */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
 }
 
 .heroImage {
   width: 50%;
-  max-width: 600px;
-  height: auto;
-  margin-right: 2em;
+  max-width: 500px;
+  height: 600px;
+  border-radius: 10px; /* Apply border-radius to match heroContainer */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 750px) {
@@ -318,37 +319,39 @@ footer {
 }
 
 .heroContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  text-align: left; /* Align text to the left */
+  margin-left: 2em; /* Add margin for spacing between image and content */
+  padding: 0 2em; /* Add padding to create space */
+} /* Add margin for spacing between image and content */
+
+
+.heroContent h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5em; /* Adjust margin */
+  color: #333; /* Add color */
 }
 
-.heroTitle {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-  color: #333;
-}
-
-.heroDescription {
-  font-size: 1.2em;
-  margin-bottom: 1em;
-  color: #555;
+.heroContent p {
+  font-size: 1.2rem;
+  margin-bottom: 1em; /* Adjust margin */
+  color: #555; /* Add color */
 }
 
 .heroButton {
-  width: 12em; /* Adjusted width */
-  height: 3.5em; /* Adjusted height */
-  background-color: #007bff; /* Blue button background */
-  color: #fff; /* White text color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded button corners */
-  cursor: pointer; /* Change cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth color transition */
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .heroButton:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #e74c3c;
 }
 
 /* Filter buttons styling */
