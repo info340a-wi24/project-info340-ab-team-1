@@ -78,7 +78,7 @@ export default function Register() {
             </button>
             <center>
               <p>
-                If you have not account{" "}
+                If you are not registered,
                 <button
                   className="auth-btn"
                   onClick={() => changeView("register")}
@@ -126,7 +126,7 @@ export default function Register() {
             </button>
             <center>
               <p>
-                If you already registered!{" "}
+                If you have an account,
                 <button
                   className="auth-btn"
                   onClick={() => changeView("login")}
