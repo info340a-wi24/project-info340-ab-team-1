@@ -1,7 +1,7 @@
 
 import React from "react";
 
-export default function FilterForm({onSubmit}) {
+export default function FilterForm( {onSubmit} ) {
     //self explanatory, returns the value that is filled in the form to Home.
     const handleSubmit = (event) => {
         event.preventDefault();

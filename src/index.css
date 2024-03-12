@@ -360,3 +360,8 @@ footer {
   cursor: pointer;
   outline: none;
 }
+
+/* Add bike button styling */
+.addLocation {
+  margin-top: 1em;
+}

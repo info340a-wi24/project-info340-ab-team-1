@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import AddBikeForm from "../components/AddBike";
 import Map from "../components/Map";
 import FilterForm from "../components/FilterForm";
@@ -9,6 +9,7 @@ export default function Home(props){
 	const [data, setData] = useState()
 	const [filter, setFilter] = useState('null') //initial value 'null' is because of the buggy initial load. if the initial state of filter was: '', then updating it with the form would not cause a rerender. so it needs an initial value other than ''
 	const [reset, setReset] = useState(0);
+	const mapRef = useRef(null);
 	
 	useEffect(() =>{
 		async function fetchFilter() {
@@ -45,15 +46,23 @@ export default function Home(props){
 		})
 	}, [reset])*/
 
+	const scrollToMap = () => {
+		if (mapRef.current) {
+		  mapRef.current.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
+
     return (
         <>
 		<header>
-			<Hero />
+			<Hero scrollToMap={scrollToMap}/>
 		</header>
 		
         <main>
 			<div className="content">
-				<h1>Bike Rack Locator</h1>
+				<div ref={mapRef}>
+					<h1>Bike Rack Locator</h1>
+				</div>
 				<p>Find the nearest bike racks and contribute by adding new locations!</p>
 				<FilterForm onSubmit={handleFilterSubmit} />
 				<Map locations={data}/>

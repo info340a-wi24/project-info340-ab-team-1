@@ -73,7 +73,7 @@ export default function AddBikeForm() {
                     <input style={{width: '20px', height: '20px', marginRight: '10px' }} type="radio" id="locked" name="bike-rack-type" value="locked" onChange={(e) => updateForm({ type: "locked" })}/>
                 </div>
 
-                <button type="submit">Add Location</button>
+                <button className="addLocation" type="submit">Add Location</button>
             </form>
 
 
