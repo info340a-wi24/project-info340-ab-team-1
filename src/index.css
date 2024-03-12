@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
@@ -37,7 +37,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .content {
@@ -57,11 +57,7 @@ nav {
 
 .mapboxgl-popup {
   max-width: 400px;
-  font:
-      12px/20px 'Helvetica Neue',
-      Arial,
-      Helvetica,
-      sans-serif;
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 .mapboxgl-canvas {
@@ -101,11 +97,11 @@ nav {
 }
 
 .add-location-form input:focus {
-  border-color: #4CAF50;
+  border-color: #4caf50;
 }
 
 .add-location-form button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -138,7 +134,6 @@ footer {
 }
 
 .form-popup {
-  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -147,22 +142,6 @@ footer {
   padding: 20px;
   border: 1px solid #ccc;
   z-index: 9;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-}
-
-.form-popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fefefe;
-  padding: 20px;
-  border: 1px solid #ccc;
-  z-index: 9;
-  width: 400px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
@@ -171,8 +150,8 @@ footer {
   max-width: 370px;
 }
 
-.form-container input[type=text],
-.form-container input[type=password] {
+.form-container input[type="text"],
+.form-container input[type="password"] {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
@@ -183,20 +162,20 @@ footer {
   transition: border-color 0.3s ease-in-out;
 }
 
-.form-container input[type=text]:focus,
-.form-container input[type=password]:focus {
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
   background-color: #fff;
   outline: none;
-  border-color: #4CAF50;
+  border-color: #4caf50;
 }
 
 .form-container .btn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 12px 20px;
   border: none;
   cursor: pointer;
-  width: 400px;
+  width: 100%;
   margin: 10px 0;
   border-radius: 6px;
   transition: background-color 0.3s ease-in-out;
@@ -218,7 +197,7 @@ footer {
 
 .hamburger {
   cursor: pointer;
-  display: none
+  display: none;
 }
 
 .hamburger input {
@@ -238,7 +217,7 @@ footer {
   stroke-width: 3;
   /* Define the transition for transforming the Stroke */
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line-top-bottom {
@@ -324,9 +303,8 @@ footer {
   padding: 0 2em; /* Add padding to create space */
 } /* Add margin for spacing between image and content */
 
-
 .heroContent h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5em; /* Adjust margin */
@@ -372,4 +350,13 @@ footer {
 /* Add new bike rack form styling */
 .bike-rack-type-buttons label {
   margin: 0.5em;
+}
+
+.auth-btn {
+  text-decoration: underline;
+  background: none;
+  color: blue;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
