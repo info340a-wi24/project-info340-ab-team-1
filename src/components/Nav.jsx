@@ -16,7 +16,6 @@ export default function NavBar() {
                 <div className="nav-links">
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/about">About Us</NavLink>
-                    <NavLink to="/register">Register</NavLink>
                 </div>
                 {/* "Hamburger menu" / "Bar icon" to toggle the navigation links on smaller screens */}
                 <label className="hamburger">

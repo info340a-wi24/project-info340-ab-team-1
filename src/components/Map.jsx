@@ -32,7 +32,6 @@ export default function Map(props) {
         newLocations.push(newLoc);
       });
       setBikeLocations(newLocations); //setState of bikeracks to this string array of to-be-jsonified bike racks
-      console.log(bikeLocations); // print for testing
     }
   }, [props.locations]); //fire this whenevery the bike racks put into the map change
 
@@ -91,6 +90,12 @@ export default function Map(props) {
       map.current.getCanvas().style.cursor = "";
       popup.remove();
     });
+
+    map.current.on("click", "locations_layer", (point) => {
+      const coordinates = point.features[0].geometry.coordinates.slice();
+      const url = `https://www.google.com/maps/search/?api=1&query=${coordinates[1]},${coordinates[0]}`;
+      window.open(url, "_blank");
+    })
   }, []);
 
   useEffect(() => {
