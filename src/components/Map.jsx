@@ -73,8 +73,9 @@ export default function Map(props) {
       map.current.getCanvas().style.cursor = "pointer";
 
       const coordinates = point.features[0].geometry.coordinates.slice();
-      let typeLC = point.features[0].properties.type;
-      const type = typeLC.charAt(0).toUpperCase() + typeLC.slice(1);
+      const name = point.features[0].properties.name;
+      const type = point.features[0].properties.type.charAt(0).toUpperCase()
+        + point.features[0].properties.type.slice(1);
 
       while (Math.abs(point.lngLat.lng - coordinates[0]) > 180) {
         coordinates[0] += point.lngLat.lng > coordinates[0] ? 360 : -360;
@@ -82,7 +83,7 @@ export default function Map(props) {
 
       popup
         .setLngLat(coordinates)
-        .setHTML("Type: " + type)
+        .setHTML("<strong><h2>" + name + "</h2></strong> Type: " + type)
         .addTo(map.current);
     });
 

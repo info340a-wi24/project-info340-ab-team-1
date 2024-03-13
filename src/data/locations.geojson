@@ -1,15 +1,6 @@
 {"type":"FeatureCollection","name":"UW Bike Racks","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},
 "features":[
-    {"type":"Feature",
-    "properties":{
-                "id":"feature1",
-                "name":"Bike Rack 1",
-                "locked":false},
-    "geometry":{
-                "type":"Point",
-                "coordinates":[-122.3092833,47.657077]},
-    "id":0},
-    
+    {"type":"Feature","properties":{"id":"feature1","name":"Bike Rack 1","locked":false},"geometry":{"type":"Point","coordinates":[-122.3092833,47.657077]},"id":0},
     {"type":"Feature","properties":{"id":"feature2","name":"Bike Rack 2","locked":false},"geometry":{"type":"Point","coordinates":[-122.3086003,47.6572245]},"id":1},
     {"type":"Feature","properties":{"id":"feature3","name":"Bike Rack 3","locked":false},"geometry":{"type":"Point","coordinates":[-122.307616,47.6579173]},"id":2},
     {"type":"Feature","properties":{"id":"feature4","name":"Bike Rack 4","locked":false},"geometry":{"type":"Point","coordinates":[-122.3071077,47.6581781]},"id":3},
