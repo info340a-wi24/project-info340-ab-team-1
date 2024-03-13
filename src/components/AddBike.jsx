@@ -18,7 +18,7 @@ export default function AddBikeForm() {
 
     async function onSubmit(e) {
         e.preventDefault();
-        if (form.name != "" && form.latitude != "" && form.longitude != "") {
+        if (form.name != "" && form.latitude != "" && form.longitude != "" && form.type != "") {
             const db = getDatabase();
             const bikerackRef = ref(db, "racks")
             const newBikeRack = { ...form };
@@ -47,6 +47,7 @@ export default function AddBikeForm() {
                     type="number"
                     min="-90"
                     max="90"
+                    step="any"
                     id="latitude"
                     name="latitude"
                     value={form.latitude}
@@ -58,6 +59,7 @@ export default function AddBikeForm() {
                     type="number"
                     min="-180"
                     max="180"
+                    step="any"
                     id="longitude"
                     name="longitude"
                     value={form.longitude}

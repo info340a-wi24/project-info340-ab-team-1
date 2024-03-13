@@ -26,12 +26,12 @@ export default function Map(props) {
           row.val().locationName
         }","type":"${
           row.val().type
-        }"},"geometry":{"type":"Point","coordinates":[${row.val().latitude},${
-          row.val().longitude
+        }"},"geometry":{"type":"Point","coordinates":[${row.val().longitude},${
+          row.val().latitude
         }]}}`;
         newLocations.push(newLoc);
       });
-      setBikeLocations(JSON.stringify(newLocations)); //setState of bikeracks to this string array of to-be-jsonified bike racks
+      setBikeLocations(newLocations); //setState of bikeracks to this string array of to-be-jsonified bike racks
       console.log(bikeLocations); // print for testing
     }
   }, [props.locations]); //fire this whenevery the bike racks put into the map change
